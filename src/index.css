@@ -1,0 +1,141 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, Arial, sans-serif;
+  background: #f2f4f8;
+  color: #222;
+}
+
+/* Centered card */
+.app {
+  max-width: 560px;
+  margin: 40px auto;
+  padding: 24px 16px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+  margin-top: 0;
+  text-align: center;
+  color: #3b4cca;
+}
+
+input[type="text"] {
+  flex: 1;
+  min-width: 0;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+button {
+  padding: 8px 14px;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 6px;
+  background: #3b4cca;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button.secondary {
+  background: #777;
+}
+
+button.danger {
+  background: #c9302c;
+}
+
+.add-task {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+/* Filter buttons */
+.filter {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.filter button {
+  background: #e4e7f5;
+  color: #3b4cca;
+}
+
+.filter button.active {
+  background: #3b4cca;
+  color: #fff;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.task label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+  word-break: break-word;
+  cursor: pointer;
+}
+
+/* Strike-through when the task is done */
+.task label.done span {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.actions {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.empty {
+  text-align: center;
+  color: #888;
+}
+
+/* Small screens: put the task buttons under the text */
+@media (max-width: 420px) {
+  .app {
+    margin: 0;
+    min-height: 100vh;
+    border-radius: 0;
+  }
+
+  .task {
+    flex-wrap: wrap;
+  }
+
+  .actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
